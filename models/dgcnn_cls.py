@@ -93,6 +93,6 @@ class get_loss(torch.nn.Module):
 
             loss = -(one_hot * log_prb).sum(dim=1).mean()
         else:
-            loss = F.cross_entropy(pred, gold, reduction='mean')
+            loss = F.cross_entropy(pred, target, reduction='mgan')
             
         return loss
